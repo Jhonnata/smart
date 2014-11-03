@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="Jhonnata Simões" />
+	<title>Smart School</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Custom CSS -->
+	<link href="css/custom.css" rel="stylesheet" />
+	<!-- Custom Fonts -->
+	<link href="font-awesome-4.1.0/css/font-awesome.min.css"
+		rel="stylesheet" type="text/css" />
+	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+		rel="stylesheet" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Kaushan+Script'
+		rel='stylesheet' type='text/css' />
+	<link
+		href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+		rel='stylesheet' type='text/css' />
+	<link
+		href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
+		rel='stylesheet' type='text/css' />
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</h:head>
+
+<h:body id="page-top" class="index">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Navegação</span> <span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top">E.E.
+					ALGURES</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="hidden"><a href="#page-top"></a></li>
+					<li><a class="page-scroll" href="#services">Notícias</a></li>
+					<li><a class="page-scroll" href="#about">Eventos</a></li>
+					<li><a class="page-scroll" href="#portfolio">Sobre</a></li>
+					<li><a class="page-scroll" href="#" data-toggle="dropdown">Login</a>
+						<div class=" page-scroll" id="login">
+							<!-- 							<div id="triangle"></div> -->
+							<form method="post">
+								<b:well>
+									<b:row>
+										<b:column>
+											<h:outputLabel value="Usuário" for="usuario" />
+											<h:inputText styleClass="myInputEmailSenha" fieldSize="sm"
+												id="usuario" />
+										</b:column>
+									</b:row>
+									<b:row>
+										<b:column>
+											<h:outputLabel value="Senha" for="senha" />
+											<h:inputSecret styleClass="myInputEmailSenha" id="senha" />
+										</b:column>
+									</b:row>
+									<b:row>
+										<b:column>
+											<!-- 											<h:commandButton styleClass="saveButton" value="Logar-se" /> -->
+											<a class="saveButton" href="/SMART/administrator/index.jsf">
+												Logar-se </a>
+										</b:column>
+									</b:row>
+								</b:well>
+							</form>
+						</div></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="intro-text">
+				<div class="intro-lead-in"></div>
+				<div class="intro-heading">Bem vindo!</div>
+				<a href="#services" class="page-scroll btn btn-xl">Saiba Mais!</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- Services Section -->
+	<section id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading">Notícias</h2>
+					<h3 class="section-subheading text-muted">veja as notícias</h3>
+				</div>
+			</div>
+			<!-- Fim Título sesão -->
+			<div class="row text-center">
+				<div class="col-md-4">
+					<span class="fa-stack fa-4x"> <i
+						class="fa fa-circle fa-stack-2x text-primary"></i> <i
+						class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+					</span>
+					<h4 class="service-heading">Preparativos para Conae 2014
+						seguem a todo vapor</h4>
+					<p class="text-muted">
+						<b:row>
+							<b:column span="5">
+								<img class="img-responsive" src="img/about/n1.jpg" alt="" />
+							</b:column>
+							<b:column span="7">
+						Preparativos para Conae 2014 seguem a todo vapor O Fórum Nacional
+						de Educação (FNE) reuniu-se, nesta sexta-feira (17), no Edifício
+						Sede do 
+							</b:column>
+						</b:row>
+						<b:row>
+							<b:column>Ministério da Educação (MEC), em Brasília, para estreitar
+						os preparos finais da II Conferência Nacional de Educação
+						(Conae2014). Pela manhã, as Comissões Especiais de Sistematização
+						e Monitoramento e, Mobilização e Divulgação... </b:column>
+						</b:row>
+					</p>
+				</div>
+				<div class="col-md-4">
+					<span class="fa-stack fa-4x"> <i
+						class="fa fa-circle fa-stack-2x text-primary"></i> <i
+						class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+					</span>
+					<h4 class="service-heading">O Fórum Nacional de Educação (FNE)</h4>
+					<p class="text-muted">O Fórum Nacional de Educação (FNE)
+						reuniu-se, nesta sexta-feira (17), no Edifício Sede do Ministério
+						da Educação (MEC), em Brasília, para estreitar os preparos finais
+						da II Conferência Nacional de Educação (Conae2014). Pela manhã, as
+						Comissões Especiais de Sistematização e Monitoramento e,
+						Mobilização e Divulgação... FNE se reúne na próxima sexta-feira O
+						Fórum Nacional de Educação (FNE), organizador da II Conferência
+						Nacional de Educação (Conae 2014), se reúne nesta sexta-feira (17)
+						para tratar dos preparativos finais da Conae, marcada para 19 a 23
+						de novembro. O evento ocorre no Edifício Sede do Ministério da
+						Educação (MEC)...</p>
+				</div>
+				<div class="col-md-4">
+					<span class="fa-stack fa-4x"> <i
+						class="fa fa-circle fa-stack-2x text-primary"></i> <i
+						class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+					</span>
+					<h4 class="service-heading">FEE-RS apoia decreto que institui
+						Política Nacional de Participação Social</h4>
+					<p class="text-muted">
+						<b:row>
+							<b:column span="5">
+								<img class="img-responsive" src="img/about/n2.jpg" alt="" />
+							</b:column>
+							<b:column span="7">FEE-RS apoia decreto que institui Política Nacional de
+						Participação Social O Fórum Estadual de Educação aprovou Moção de
+						Apoio ao Decreto Federal nº 8.243/2014, 
+					</b:column>
+						</b:row>
+						<b:row>
+							<b:column>que institui a Política
+						Nacional de Participação Social. Em 8 de agosto, a instituição da
+						Política Nacional de Participação Social foi tema de mesa de
+						debates do 5º Encontro do Fórum...</b:column>
+						</b:row>
+
+					</p>
+				</div>
+
+			</div>
+			<!-- Fim primeira Linha -->
+		</div>
+	</section>
+
+
+	<!-- About Section -->
+	<section id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading">Eventos</h2>
+					<h3 class="section-subheading text-muted">Eventos da Escola</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<ul class="timeline">
+						<li>
+							<div class="timeline-image">
+								<img class="img-circle img-responsive" src="img/about/n2.jpg"
+									alt="" />
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4>1° Reunião do FNE</h4>
+									<h4 class="subheading">20/11/2014</h4>
+								</div>
+								<div class="timeline-body">
+									<p class="text-muted">1° Reunião do FNE Na pauta, a escolha
+										de sua logomarca.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted">
+							<div class="timeline-image">
+								<img class="img-circle img-responsive" src="img/about/n2.jpg"
+									alt="" />
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4></h4>
+									<h4 class="subheading">COMUNICAÇÃO DIGITAL</h4>
+								</div>
+								<div class="timeline-body">
+									<p class="text-muted">COMUNICAÇÃO DIGITAL: Identidade web
+										do governo tem foco no cidadão Como estabelecer um diálogo
+										mais concreto entre governo e população? A resposta está na
+										maneira com que a comunicação digital e as novas relações
+										sociais vêm transformando a sociedade civil como um todo.
+										Redes sociais, aplicativos, consultas públicas são algumas das
+										experiências já realizadas por entidades governamentais. Leia
+										mais...</p>
+								</div>
+							</div>
+						</li>
+
+
+						<li class="timeline-inverted">
+							<div class="timeline-image">
+								<h4>
+									Aguarde <br />os próximos <br />eventos!
+								</h4>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Portfolio Grid Section -->
+	<section id="portfolio" class="bg-light-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading">Sobre</h2>
+					<h3 class="section-subheading text-muted">Escola Estadual
+						Sant'ana.</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<span class="copyright">Copyright; Algures Softwares 2014</span>
+				</div>
+				<div class="col-md-4">
+					<ul class="list-inline social-buttons">
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<ul class="list-inline quicklinks">
+						<li><a href="#">Politica de privacidade</a></li>
+						<li><a href="#">Termos de uso</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- jQuery Version 1.11.0 -->
+	<script src="js/jquery-1.11.0.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Plugin JavaScript -->
+	<script src="js/jquery.easing.min.js"></script>
+	<!-- Custom Theme JavaScript -->
+	<script src="js/custom.js"></script>
+
+</h:body>
+
+</html>

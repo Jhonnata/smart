@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Smart School</title>
+	<meta name="author" content="Jhonnata Simões"></meta>
+
+</h:head>
+<h:body style="padding-top: 60px;">
+	<ui:composition template="/applayout/pageTemplate.xhtml">
+		<ui:define name="content">
+			<h:outputStylesheet library="bsf" name="css/thumbnails.css" />
+			<h:outputStylesheet library="css" name="style.css" />
+
+			<style>
+.thumbnail {
+	max-width: 100%;
+}
+
+img.thumbnail:hover, img.thumbnail:focus {
+	border: 1px solid;
+	border-color: #428BCA;
+}
+
+.ui-growl {
+	position: absolute;
+	top: 60px;
+	right: 15px;
+	width: 301px;
+	z-index: 9999;
+}
+</style>
+			<b:container>
+				<h:form id="form">
+					<b:row>
+						<b:column span="11">
+							<h1>Series / Turmas</h1>
+						</b:column>
+						<b:column span="1">
+							<h:commandLink>
+								<p:graphicImage class="thumbnail"
+									value="/resources/icons/Excel-icon.png" />
+								<p:dataExporter type="xls"
+									postProcessor="#{listObjBean.postProcessXLS}"
+									target="dataTurma" fileName="turmasEX" />
+							</h:commandLink>
+						</b:column>
+					</b:row>
+					<b:column>
+						<p:growl id="msgs" globalOnly="true" showDetail="true" />
+						<p:dataTable id="dataTurma" var="turma"
+							value="#{listObjBean.turmas}" paginator="true" rows="10"
+							editable="true" filteredValue="#{listObjBean.turmas}">
+							<f:facet name="header">
+            			Lista de Series
+       				 </f:facet>
+							<p:ajax event="rowEdit" listener="#{listObjBean.onRowEdit}"
+								update=":form:msgs" />
+							<p:ajax event="rowEditCancel"
+								listener="#{listObjBean.onRowCancel}" update=":form:msgs" />
+							<p:column filterBy="#{turma.sery.escola.nome}">
+								<f:facet name="header">
+									<h:outputText value="Escola" />
+								</f:facet>
+								<h:outputText value="#{turma.sery.escola.nome}" />
+							</p:column>
+							<p:column filterBy="#{turma.sery.nome}"
+								sortBy="#{turma.sery.nome}">
+								<f:facet name="header">
+									<h:outputText value="Serie" />
+								</f:facet>
+								<h:outputText value="#{turma.sery.nome}" />
+							</p:column>
+							<p:column filterBy="#{turma.turma}" sortBy="#{turma.turma}">
+								<f:facet name="header">
+									<h:outputText value="Turma" />
+								</f:facet>
+								<h:outputText value="#{turma.turma}" />
+							</p:column>
+							<p:column headerText="Nº Sala" filterBy="#{turma.numsala}"
+								sortBy="#{turma.numsala}">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{turma.numsala}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{turma.numsala}" style="width:100%"
+											label="Nº SALA" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+							<p:column headerText="Nº Max. de Alunos"
+								filterBy="#{turma.numalunosmax}">
+								<p:cellEditor>
+									<f:facet name="output">
+										<h:outputText value="#{turma.numalunosmax}" />
+									</f:facet>
+									<f:facet name="input">
+										<p:inputText value="#{turma.numalunosmax}" style="width:100%"
+											label="Nº Max. Aluno" />
+									</f:facet>
+								</p:cellEditor>
+							</p:column>
+							<p:column exportable="false">
+								<p:rowEditor />
+							</p:column>
+						</p:dataTable>
+					</b:column>
+				</h:form>
+			</b:container>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

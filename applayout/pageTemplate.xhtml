@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Smart School</title>
+        <meta name="author" content="Jhonnata Simões" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="PRAGMA" content="NO-CACHE" />
+        <h:outputStylesheet library="sh" name="css/shCore.css"/>
+        <h:outputStylesheet library="sh" name="css/shCoreEclipse.css"/>
+    </h:head>
+    <h:body style="padding-top: 75px;padding-bottom: 75px;">
+        
+        <h:outputScript library="sh" name="js/shCore.js" />
+        <h:outputScript library="sh" name="js/shBrushXml.js" />
+        <script>SyntaxHighlighter.defaults['gutter'] = false;</script>            
+        <ui:insert name="nbtop">
+            <ui:include src="/applayout/navbartop.xhtml"/>
+        </ui:insert>
+        
+        <b:container>
+            <ui:insert name="content"/>
+        </b:container>
+        
+        <ui:insert name="nbtop">
+            <ui:include src="/applayout/navbarbottom.xhtml"/>
+        </ui:insert>
+        
+    </h:body>
+</html>

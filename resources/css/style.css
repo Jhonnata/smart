@@ -1,0 +1,10 @@
+body{
+	background-color:#EEEFF4;
+}
+.ui-growl {
+	position: absolute;
+	top: 60px;
+	right: 15px;
+	width: 301px;
+	z-index: 9999;
+}

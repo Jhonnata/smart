@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Smart School</title>
+	<meta name="author" content="Jhonnata Simões"></meta>
+	<link href="./resources/css/style.css" rel="stylesheet" type="text/css"
+		media="screen" />
+</h:head>
+<h:body style="padding-top: 60px;">
+	<ui:composition template="/applayout/pageTemplate.xhtml">
+		<ui:define name="content">
+			<h:outputStylesheet library="bsf" name="css/thumbnails.css" />
+			<h:outputStylesheet library="css" name="bootstrap.css" />
+			<h:outputStylesheet library="css" name="style.css" />
+			<style>
+.thumbnail {
+	max-width: 100%;
+}
+
+img.thumbnail:hover, img.thumbnail:focus {
+	border: 1px solid;
+	border-color: #428BCA;
+}
+</style>
+			<b:container>
+				<h:form id="form">
+					<b:row>
+						<b:column span="11">
+							<h1>Lista de Professores</h1>
+						</b:column>
+						<b:column span="1">
+							<h:commandLink>
+								<p:graphicImage class="thumbnail"
+									value="/resources/icons/Excel-icon.png" />
+								<p:dataExporter type="xls"
+									postProcessor="#{listObjBean.postProcessXLS}" target="dataProf"
+									fileName="professorEX" />
+							</h:commandLink>
+						</b:column>
+					</b:row>
+					<b:column>
+						<p:growl id="msgs" globalOnly="true" showDetail="true" />
+						<p:dataTable id="dataProf"
+							value="#{professorListaBean.professores}" paginator="true"
+							filteredValue="#{professorListaBean.professores}" rows="10"
+							var="prof">
+							<f:facet name="header">
+            			Lista de Professores
+       				 </f:facet>
+							<p:column headerText="Nome" filterBy="#{prof.nome}"
+								sortBy="#{prof.nome}">
+								<h:outputText value="#{prof.nome}" />
+							</p:column>
+							<p:column headerText="CPF" filterBy="#{prof.cpf}"
+								sortBy="#{prof.cpf}">
+								<h:outputText value="#{prof.cpf}" />
+							</p:column>
+							<p:column headerText="Email" filterBy="#{prof.email}"
+								sortBy="#{prof.email}">
+								<h:outputText value="#{prof.email}" />
+							</p:column>
+							<p:column headerText="Disciplina"
+								filterBy="#{prof.disciplina.nome}"
+								sortBy="#{prof.disciplina.nome}">
+								<h:outputText value="#{prof.disciplina.nome}" />
+							</p:column>
+						</p:dataTable>
+					</b:column>
+
+				</h:form>
+			</b:container>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

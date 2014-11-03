@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Smart School</title>
+	<meta name="author" content="Jhonnata Simões"></meta>
+</h:head>
+<h:body style="padding-top: 60px;">
+	<ui:composition template="/applayout/pageTemplate.xhtml">
+		<ui:define name="content">
+			<h:outputStylesheet library="bsf" name="css/thumbnails.css" />
+			<h:outputStylesheet library="css" name="bootstrap.css" />
+			<h:outputStylesheet library="css" name="style.css" />
+
+			<style>
+.thumbnail {
+	max-width: 100%;
+}
+
+img.thumbnail:hover, img.thumbnail:focus {
+	border: 1px solid;
+	border-color: #428BCA;
+}
+</style>
+			<b:container>
+				<b:row>
+					<b:column>
+						<h1>Cadastrar Disciplinas</h1>
+					</b:column>
+				</b:row>
+				<p:growl id="messages" globalOnly="true" showDetail="true" />
+				<h:form id="form">
+					<b:panel>
+						<b:row>
+							<b:column>
+
+								<b:well>
+									<b:row>
+										<b:column span="3">
+											<h:outputLabel for="nome" value="Disciplina"  />
+											<p:inputText required="true	" id="nome"
+												value="#{disciplinaBean.disciplina.nome}" fieldSize="sm"
+											styleClass="form-control">
+												<f:validateLength minimum="2" />
+												<p:messages for="nome" />
+											</p:inputText>
+										</b:column>
+										<b:column span="9">
+											<h:outputLabel for="obs" value="Descrição:" />
+											<p:inputText id="obs"
+												value="#{disciplinaBean.disciplina.descricao}"
+												fieldSize="sm" styleClass="form-control">
+												<f:validateLength minimum="3" />
+												<h:message for="obs" />
+											</p:inputText>
+										</b:column>
+									</b:row>
+								</b:well>
+							</b:column>
+						</b:row>
+
+						<b:row>
+							<b:column span="8"></b:column>
+							<b:column span="4">
+								<b:column span="7">
+									<h:commandButton styleClass="btn btn-primary"
+										value="Salvar Registro" />
+								</b:column>
+								<b:column span="1"></b:column>
+								<b:column span="4">
+									<h:commandButton action="#{disciplinaBean.salvar}"
+										styleClass="btn btn-primary" value="Salvar Registro" update="messages" />
+								</b:column>
+							</b:column>
+						</b:row>
+						<!-- actionListener="" /-->
+					</b:panel>
+				</h:form>
+			</b:container>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

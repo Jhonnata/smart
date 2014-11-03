@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition>
+		<b:navBar brand="Smart School"
+			brandHref="#{request.contextPath}/administrator/index.jsf"
+			inverse="true" fixed="top">
+			<h:outputStylesheet library="css" name="bootstrap.css" />
+			<b:container>
+				<b:navbarLinks pull="right">
+					<b:dropMenu value="Instituição">
+						<b:navLink value="Cadastrar Escola"
+							outcome="/administrator/cadastro/escola"
+							icon="glyphicon glyphicon-pencil" />
+						<b:navLink value="Cadastrar Serie"
+							outcome="/administrator/cadastro/serie"
+							icon="glyphicon glyphicon-pencil" />
+						<b:navLink value="Cadastrar Turma"
+							outcome="/administrator/cadastro/turma"
+							icon="glyphicon glyphicon-pencil" />
+							<b:navLink value="Cadastrar Disciplinas"
+							outcome="/administrator/cadastro/disciplina"
+							icon="glyphicon glyphicon-pencil" />
+
+					</b:dropMenu>
+					<b:dropMenu value="Relatórios">
+						<b:navLink value="Listar Professores"
+							outcome="/administrator/listar/listProfessor" icon="list" />
+						<b:navLink value="Listar Alunos"
+							outcome="/administrator/listar/listAlunos" icon="list" />
+						<b:navLink value="Listar Serie/Turma"
+							outcome="/administrator/listar/listSerie" icon="list" />
+						<b:navLink value="Listar de Notas"
+							outcome="/administrator/listar/listNotas" icon="list" />
+					</b:dropMenu>
+					<b:dropMenu value="Secretaria">
+						<b:navLink value="Cadastrar Professor"
+							outcome="/administrator/cadastro/cadastroProfessor"
+							icon="glyphicon glyphicon-pencil" />
+						<b:navLink value="Cadastrar Alunos"
+							outcome="/administrator/cadastro/cadastroAluno"
+							icon="glyphicon glyphicon-pencil" />
+						<!-- 						<b:navLink value="Gerar Histórico" -->
+						<!-- 							outcome="/administrator/historioco/historico" icon="glyphicon glyphicon-briefcase" /> -->
+						<b:navLink value="Inserir Notas"
+							outcome="/administrator/cadastro/nota"
+							icon="glyphicon glyphicon-eye-open" />
+						<b:navLink value="Informativos"
+							outcome="/administrator/cadastro/informativo"
+							icon="glyphicon glyphicon-pencil" />
+						<b:navLink value="Eventos"
+							outcome="/administrator/cadastro/eventos"
+							icon="glyphicon glyphicon-pencil" />
+
+						<!--b:navLink value="Popover" /-->
+					</b:dropMenu>
+					<b:dropMenu value="Jhonnata Simões">
+<!-- 						<b:navLink value="Editar Perfil" outcome="/jquery-ui/slider" -->
+<!-- 							icon="glyphicon glyphicon-edit" /> -->
+						<b:navLink 
+							icon="glyphicon glyphicon-log-out" >
+							<a href="/SMART_SCHOOL/index.jsf"><i
+												class="fa fa-arrow-circle-left"></i>	Log out </a>
+							</b:navLink>
+							
+					</b:dropMenu>
+				</b:navbarLinks>
+			</b:container>
+		</b:navBar>
+
+	</ui:composition>
+</h:body>
+</html>
+
